@@ -28,7 +28,7 @@ func main() {
 
 	if *user != "" && *pass != "" {
 		log.Println("Proxy with Basic Auth enabled.")
-		auth.ProxyBasic(proxy, "my_realm", func(_user string, _pass string) bool {
+		auth.ProxyBasic(proxy, "", func(_user string, _pass string) bool {
 			return *user == _user && *pass == _pass
 		})
 	}
